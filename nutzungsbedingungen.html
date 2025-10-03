@@ -272,6 +272,7 @@
 </html>
 <script>
   const allowedDomains = ['nexurebots.de'];
+    
   if (!allowedDomains.includes(window.location.hostname)) {
     document.body.innerHTML = `
       <div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#000;color:#fff;flex-direction:column;text-align:center;">
@@ -279,6 +280,8 @@
         <p>Diese Website ist nur auf <strong>nexurebots.de</strong> verfügbar.</p>
       </div>
     `;
+      
     document.body.style.overflow = 'hidden';
+      
   }
 </script>
