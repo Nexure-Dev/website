@@ -4,45 +4,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexure Bots</title>
+    <title>Nexure Bots V2</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="https://cdn.cb-hosting.tech/nexurebotsV2/logos/LogoBackground.png" type="image/png" sizes="32x32" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .background {
+            display: none; /* Farbige Orbs entfernt */
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            margin-bottom: 4rem;
+            border-radius: 16px;
+            animation: fadeInDown 0.8s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 900px;
+        }
+
+        .title-wrapper {
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            font-weight: 700;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: #bbbbbb;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .description {
+            font-size: clamp(1.125rem, 2vw, 1.375rem);
+            color: #dddddd;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+            font-weight: 400;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .top-link-container {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            z-index: 10;
+        }
+
+        .site-link {
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            color: #dddddd;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            animation: fadeInDown 0.8s ease-out 0.5s both;
+            display: inline-block;
+        }
+
+        .site-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .discord-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 2.5rem;
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(135deg, #444, #222);
+            border: none;
+            border-radius: 16px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+            width: fit-content;
+        }
+
+        .discord-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .discord-button:hover::before {
+            left: 100%;
+        }
+
+        .discord-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(255, 255, 255, 0.1);
+        }
+
+        .discord-button:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        .discord-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+            animation: fadeInUp 0.8s ease-out 0.7s both;
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+            color: #ccc;
+        }
+
+        .feature-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .feature-text {
+            font-size: 0.875rem;
+            color: #aaaaaa;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .logo {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 3rem;
+            }
+
+            .top-link-container {
+                top: 20px;
+                right: 20px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-    <style>* { margin: 0; padding: 0; box-sizing: border-box; } body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; min-height: 100vh; overflow-x: hidden; } .background { position: fixed; inset: 0; z-index: 0; pointer-events: none; } .gradient-orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.3; animation: pulse 8s ease-in-out infinite; } .orb-1 { width: 500px; height: 500px; background: radial-gradient(circle, #ebe8ed, transparent); top: -250px; left: -250px; animation-delay: 0s; } .orb-2 { width: 400px; height: 400px; background: radial-gradient(circle, #ebe8ed, transparent); bottom: -200px; right: -200px; animation-delay: 2s; } .orb-3 { width: 350px; height: 350px; background: radial-gradient(circle, #ebe8ed, transparent); top: 50%; right: 10%; animation-delay: 4s; } @keyframes pulse { 0%,100%{transform:scale(1);opacity:0.3;}50%{transform:scale(1.2);opacity:0.5;} } .container { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; padding: 2rem; max-width: 1400px; } .logo { width: 80px; height: 80px; margin-bottom: 4rem; border-radius: 12px; animation: fadeInDown 0.8s ease-out; } .content { flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 800px; } h1 { font-family: 'Dancing Script', cursive; font-size: clamp(3rem, 8vw, 6rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; white-space: nowrap; overflow: hidden; border-right: none; /* Strich entfernt */ } .description { font-size: clamp(1.125rem, 2vw, 1.5rem); color: #a1a1aa; line-height: 1.6; margin-bottom: 3rem; max-width: 600px; animation: fadeInUp 0.8s ease-out 0.4s both; } .top-link-container { position: fixed; top: 40px; left: 50%; transform: translateX(-50%); z-index: 10; } .site-link { font-size: clamp(1rem, 1.8vw, 1.25rem); color: #a1a1aa; text-decoration: none; animation: fadeInUp 0.8s ease-out 0.4s both; } .discord-button { display: inline-flex; align-items: center; gap: 0.75rem; background: linear-gradient(135deg, #5865f2 0%, #7289da 100%); color: white; padding: 1rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.125rem; transition: all 0.3s ease; position: relative; overflow: hidden; width: fit-content; animation: fadeInUp 0.8s ease-out 0.6s both; } .discord-button::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: left 0.5s ease; } .discord-button:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(88,101,242,0.4); } .discord-button:hover::before { left: 100%; } .discord-icon { width: 24px; height: 24px; } @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } } @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } } .handwriting text { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 4s forwards; } @keyframes draw { to { stroke-dashoffset: 0; } } @media (max-width: 768px) { .container { padding: 1.5rem; } .logo { width: 60px; height: 60px; margin-bottom: 3rem; } h1 { font-size: clamp(2.5rem, 10vw, 5rem); margin-bottom: 1rem; } .description { margin-bottom: 2rem; } .discord-button { padding: 0.875rem 1.5rem; font-size: 1rem; } }</style>
 
 <body>
     <div class="background">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
     </div>
-    <div class="container"> <img src="https://cdn.cb-hosting.tech/nexurebotsV2/logos/LogoBackground.png" alt="Logo" class="logo">
-        <div class="top-link-container"> <a href="nutzungsbedingungen.html" class="site-link">Nutzungsbedingungen</a> </div>
+
+    <div class="container">
+        <img src="https://cdn.cb-hosting.tech/nexurebotsV2/logos/LogoBackground.png" alt="Nexure Bots Logo" class="logo">
+
+        <div class="top-link-container">
+            <a href="nutzungsbedingungen.html" class="site-link">Nutzungsbedingungen</a>
+        </div>
+
         <div class="content">
-            <h1 class="handwriting"> <svg viewBox="0 0 500 100" xmlns="http://www.w3.org/2000/svg"> <text x="0" y="75" font-family="Dancing Script" font-size="72" fill="none" stroke="#fff"> Nexure Bots </text> </svg> </h1>
-            <p class="description"> Von uns erhältst du professionelle, individuell angepasste und dennoch günstige Discord Bots. Ob Moderation, Automatisierungen oder exklusive Features – wir entwickeln genau das, was dein Server braucht. </p>
-            <a href="https://dsc.gg/nexure-bots"
-            class="discord-button" target="_blank" rel="noopener noreferrer">
+            <div class="title-wrapper">
+                <h1>Nexure Bots</h1>
+                <div class="subtitle">Discord Bot Entwicklung</div>
+            </div>
+
+            <p class="description">
+                Von uns erhältst du professionelle, individuell angepasste und dennoch günstige Discord Bots.
+                Ob Moderation, Automatisierungen oder exklusive Features – wir entwickeln genau das, was dein Server braucht.
+            </p>
+
+            <a href="https://dsc.gg/nexure-bots" class="discord-button" target="_blank" rel="noopener noreferrer">
                 <svg class="discord-icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"
-                    /> </svg> Discord beitreten </a>
+                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" />
+                </svg>
+                Discord beitreten
+            </a>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-title">Schnell & Zuverlässig</div>
+                    <div class="feature-text">Schnelle Lieferzeit und professioneller Support</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <div class="feature-title">Custom Bots</div>
+                    <div class="feature-text">Maßgeschneidert nach deinen Wünschen</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <div class="feature-title">Premium Qualität</div>
+                    <div class="feature-text">Professionelle Entwicklung zu fairen Preisen</div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        const allowedDomains = ['nexurebots.de'];
+        if (!allowedDomains.includes(window.location.hostname)) {
+            document.body.innerHTML = `
+                <div style="display:flex;align-items:center;justify-content:center;height:100vh;background:linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);color:#fff;flex-direction:column;text-align:center;padding:2rem;">
+                    <h1 style="font-size:2.5rem;margin-bottom:1rem;background:linear-gradient(135deg, #ffffff 0%, #cccccc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Seite nicht verfügbar</h1>
+                    <p style="font-size:1.25rem;color:#cccccc;">Diese Website ist nur auf <strong style="color:#ffffff;">nexurebots.de</strong> verfügbar.</p>
+                </div>
+            `;
+            document.body.style.overflow = 'hidden';
+        }
+    </script>
 </body>
 
 </html>
-<script>
-    const allowedDomains = ['nexurebots.de'];
-      if (!allowedDomains.includes(window.location.hostname)) {
-        document.body.innerHTML = `
-          <div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#000;color:#fff;flex-direction:column;text-align:center;">
-            <h1>Seite nicht verfügbar</h1>
-            <p>Diese Website ist nur auf <strong>nexurebots.de</strong> verfügbar.</p>
-          </div>
-        `;
-        document.body.style.overflow = 'hidden';
-      }
-</script>
-
