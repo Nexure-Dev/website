@@ -275,19 +275,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        const allowedDomains = ['nexurebots.de'];
-        if (!allowedDomains.includes(window.location.hostname)) {
-            document.body.innerHTML = `
-                <div style="display:flex;align-items:center;justify-content:center;height:100vh;background:linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);color:#fff;flex-direction:column;text-align:center;padding:2rem;">
-                    <h1 style="font-size:2.5rem;margin-bottom:1rem;background:linear-gradient(135deg, #ffffff 0%, #cccccc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Seite nicht verfügbar</h1>
-                    <p style="font-size:1.25rem;color:#cccccc;">Diese Website ist nur auf <strong style="color:#ffffff;">nexurebots.de</strong> verfügbar.</p>
-                </div>
-            `;
-            document.body.style.overflow = 'hidden';
-        }
-    </script>
 </body>
 
 </html>
