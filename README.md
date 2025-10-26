@@ -16,4 +16,4 @@
 <h1 align="center">
   🔗 Nexure Website
 </h1>
-<p>Dies ist unsere offizieller Source-Code unserer Website <strong>nexure-dev.de!</strong></p>
+<p align="center">Dies ist unsere offizieller Source-Code unserer Website <strong>nexure-dev.de!</strong></p>
