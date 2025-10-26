@@ -13,7 +13,7 @@
 
 <br>
 
-<h1 align="center">
+<h2 align="center">
   🔗 Nexure Website
-</h1>
+</h2>
 <p align="center">Dies ist unsere offizieller Source-Code unserer Website <strong>nexure-dev.de!</strong></p>
