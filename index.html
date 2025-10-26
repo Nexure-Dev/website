@@ -1,1 +1,62 @@
-<script language="javascript" type="text/javascript"> document.location="wartungen.html"; </script>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexure Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/Nexure-Dev/assets@main/Logos/nexure_logo.png" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark': {
+                            900: '#0a0a0f',
+                            800: '#12121a',
+                            700: '#1a1a24',
+                        },
+                        'cyan': {
+                            DEFAULT: '#00CED1',
+                            400: '#00E5E8',
+                            600: '#00B8BB',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-gray-100">
+    <div id="navbar"></div>
+
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-4xl">
+<h1 class="text-5xl sm:text-6xl lg:text-8xl font-black leading-tight mb-6">
+  Programmieren <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 animate-pulse">zuerst!</span>
+</h1>
+
+                
+                <p class="text-xl text-gray-400 mb-8 leading-relaxed">
+                    Nexure programmiert kostenlos und freiwillig FiveM Scripts und Discord Bots, damit keiner extrem viel Geld ausgeben muss. Bei uns, kannst du auch Anfangen, selbstständig zu programmieren! Wir helfen dir!
+                </p>
+
+                <div class="flex gap-4">
+                    <a href="repos.html" class="px-6 py-3 bg-cyan hover:bg-cyan-400 text-dark-900 font-semibold rounded-lg transition-colors">
+                        Repositorys ansehen
+                    </a>
+                    <a href="https://github.com/Nexure-Dev" target="_blank" class="px-6 py-3 bg-dark-800 hover:bg-dark-700 border border-gray-800 text-white font-semibold rounded-lg transition-colors">
+                        GitHub Profil
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/footer.js"></script>
+</body>
+</html>
