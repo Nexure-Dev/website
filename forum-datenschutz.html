@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz - Nexure Forum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/Nexure-Dev/assets@main/Logos/nexure_logo.png" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'slate': {
+                            950: '#0f1419',
+                            900: '#1a1f2e',
+                            850: '#1e2433',
+                            800: '#252d3d',
+                            700: '#2d3548',
+                        },
+                        'cyan': {
+                            DEFAULT: '#06b6d4',
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-950 text-gray-100 font-sans antialiased">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <img src="https://cdn.jsdelivr.net/gh/Nexure-Dev/assets@main/Logos/nexure_logo.png" alt="Nexure Logo" class="w-9 h-9">
+                    <span class="text-xl font-bold text-white tracking-tight">Nexure Forum</span>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="https://nexure-dev.de" class="text-gray-400 hover:text-white text-sm transition-colors">Hauptseite</a>
+                    <a href="https://forum.nexure-dev.de" class="text-gray-400 hover:text-white text-sm transition-colors">Forum</a>
+                    <a href="https://dsc.gg/nexure" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm rounded-lg transition-all hover:shadow-lg hover:shadow-cyan-500/20">Discord Server</a>
+                </div>
+
+                <button class="md:hidden p-2 text-gray-400 hover:text-white" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800/50 bg-slate-900/95 backdrop-blur-xl">
+            <div class="px-6 py-4 space-y-3">
+                <a href="https://nexure-dev.de" class="block text-gray-400 hover:text-white text-sm py-2 transition-colors">Hauptseite</a>
+                <a href="https://forum.nexure-dev.de" class="block text-gray-400 hover:text-white text-sm py-2 transition-colors">Forum</a>
+                <a href="https://dsc.gg/nexure" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm rounded-lg transition-all text-center">Discord Server</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-28 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-12">
+                <div class="inline-block mb-4">
+                    <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-sm font-medium rounded-full border border-cyan-500/20">Rechtliches</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-4">Forum Datenschutzerklärung</h1>
+                <p class="text-xl text-gray-400">Informationen zur Datenverarbeitung im Nexure Forum</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">1. Datenschutz auf einen Blick</h2>
+                    
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Allgemeine Hinweise</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unser Forum besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Datenerfassung in diesem Forum</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        <span class="font-semibold text-white">Wer ist verantwortlich für die Datenerfassung in diesem Forum?</span><br>
+                        Die Datenverarbeitung in diesem Forum erfolgt durch den Forenbetreiber. Dessen Kontaktdaten können Sie dem Impressum entnehmen.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        <span class="font-semibold text-white">Wie erfassen wir Ihre Daten?</span><br>
+                        Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie bei der Registrierung oder beim Erstellen von Beiträgen eingeben.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch des Forums durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Zeitpunkt des Seitenaufrufs).
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">2. Hosting</h2>
+                    
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Eigener Server</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Dieses Forum wird auf einem eigenen, lokal betriebenen Server gehostet. Die Daten werden sicher auf unserer eigenen Infrastruktur gespeichert und verarbeitet.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Die personenbezogenen Daten, die in diesem Forum erfasst werden, werden ausschließlich auf unseren eigenen Servern gespeichert. Hierbei kann es sich v. a. um Kontaktanfragen, Meta- und Kommunikationsdaten, Benutzerdaten, Beiträge und sonstige Daten handeln, die über das Forum generiert werden.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Die Speicherung erfolgt zum Zwecke der Bereitstellung des Forums und im Interesse einer sicheren und zuverlässigen Nutzererfahrung (Art. 6 Abs. 1 lit. f DSGVO).
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">3. Allgemeine Hinweise und Pflichtinformationen</h2>
+                    
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Datenschutz</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Die Betreiber dieses Forums nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Wenn Sie dieses Forum benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Hinweis zur verantwortlichen Stelle</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Die verantwortliche Stelle für die Datenverarbeitung in diesem Forum ist im <a href="https://nexure-dev.de/impressum.html" class="text-cyan-400 hover:text-cyan-300 transition-colors underline">Impressum</a> genannt.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Speicherdauer</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">4. Datenerfassung in diesem Forum</h2>
+                    
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Registrierung</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sie haben die Möglichkeit, sich in unserem Forum zu registrieren. Dazu ist die Angabe personenbezogener Daten erforderlich, die aus der Eingabemaske hervorgehen. Folgende Daten werden bei der Registrierung erhoben:
+                    </p>
+                    <div class="bg-slate-800/50 rounded-lg p-4 text-gray-300 mb-4 space-y-1">
+                        <p>• Benutzername</p>
+                        <p>• E-Mail-Adresse</p>
+                        <p>• Passwort (verschlüsselt gespeichert)</p>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Die Verarbeitung der bei der Registrierung eingegebenen Daten erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können eine von Ihnen erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bereits erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Diskussionen und Kommentare</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sie können in unserem Forum Diskussionen (Posts) erstellen und auf bestehende Diskussionen kommentieren. Diese Beiträge werden zusammen mit Ihrem Benutzernamen und dem Zeitstempel gespeichert und sind öffentlich sichtbar.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Die Speicherung der Beiträge erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie Ihre Beiträge löschen oder uns kontaktieren.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">OAuth-Anmeldung (Discord und GitHub)</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sie haben die Möglichkeit, sich über externe Dienste wie Discord oder GitHub in unserem Forum zu registrieren und anzumelden (OAuth). Dabei werden folgende Daten von dem jeweiligen Dienst an uns übermittelt:
+                    </p>
+                    <div class="bg-slate-800/50 rounded-lg p-4 text-gray-300 mb-4 space-y-1">
+                        <p>• Benutzername</p>
+                        <p>• E-Mail-Adresse (falls verfügbar)</p>
+                        <p>• Profilbild (falls verfügbar)</p>
+                        <p>• Eindeutige Benutzer-ID des jeweiligen Dienstes</p>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Bitte beachten Sie, dass bei der Nutzung von OAuth auch die Datenschutzerklärungen der jeweiligen Dienste gelten:
+                    </p>
+                    <div class="bg-slate-800/50 rounded-lg p-4 text-gray-300 space-y-1">
+                        <p>• Discord: <a href="https://discord.com/privacy" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition-colors underline">https://discord.com/privacy</a></p>
+                        <p>• GitHub: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition-colors underline">https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement</a></p>
+                    </div>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Zwei-Faktor-Authentifizierung (2FA)</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sie können für Ihr Konto eine Zwei-Faktor-Authentifizierung über eine Authentifizierungs-App (z. B. Google Authenticator, Authy) einrichten. Dabei wird ein geheimer Schlüssel verschlüsselt auf unserem Server gespeichert, der zur Generierung und Überprüfung der Einmalpasswörter dient.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Die Aktivierung der Zwei-Faktor-Authentifizierung erfolgt freiwillig auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) und dient der erhöhten Sicherheit Ihres Accounts.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Gravatar</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Unser Forum nutzt den Dienst Gravatar der Firma Automattic Inc., 60 29th Street #343, San Francisco, CA 94110, USA. Gravatar ist ein Dienst, bei dem Sie sich anmelden und Profilbilder hinterlegen können.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Wenn Sie in unserem Forum registriert sind, wird ein Hash-Wert Ihrer E-Mail-Adresse an Gravatar übermittelt, um zu prüfen, ob Sie dort ein Profilbild hinterlegt haben. Falls ja, wird dieses Bild als Ihr Profilbild in unserem Forum angezeigt.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Die Einbindung von Gravatar erfolgt auf Grundlage unserer berechtigten Interessen (Art. 6 Abs. 1 lit. f DSGVO), da wir mit Hilfe von Gravatar den Beitrags- und Kommentarautoren die Möglichkeit bieten, ihre Beiträge mit einem Profilbild zu personalisieren.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Durch die Anzeige der Bilder baut Ihr Browser eine direkte Verbindung zu den Servern von Gravatar auf. Dabei wird Ihre IP-Adresse an Gravatar übertragen. Wenn Sie nicht möchten, dass Gravatar Ihre Daten verarbeitet, können Sie in Ihren Foreneinstellungen ein anderes Profilbild hochladen oder die Gravatar-Funktion deaktivieren.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Weitere Informationen zur Datenverarbeitung durch Gravatar finden Sie in der Datenschutzerklärung von Automattic: <a href="https://automattic.com/privacy/" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition-colors underline">https://automattic.com/privacy/</a>
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Server-Log-Dateien</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Unser Forum speichert keine Server-Log-Dateien mit personenbezogenen Daten wie IP-Adressen, Browserinformationen oder Betriebssystemdaten. Die technische Bereitstellung des Forums erfolgt ohne Aufzeichnung detaillierter Zugriffsprotokolle.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Audit-Logs (Aktivitätsprotokolle)</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Unser Forum erstellt Audit-Logs, um bestimmte Nutzeraktivitäten zu protokollieren. Diese dienen der Sicherheit, der Nachvollziehbarkeit und der Moderation des Forums. Folgende Aktivitäten werden protokolliert:
+                    </p>
+                    <div class="bg-slate-800/50 rounded-lg p-4 text-gray-300 mb-4 space-y-1">
+                        <p>• Anmeldung am Forum</p>
+                        <p>• Abmeldung vom Forum</p>
+                        <p>• Erstellung eines Kontos</p>
+                        <p>• Erstellung einer Diskussion</p>
+                        <p>• Weitere sicherheitsrelevante Aktionen</p>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Die Protokollierung umfasst dabei:
+                    </p>
+                    <div class="bg-slate-800/50 rounded-lg p-4 text-gray-300 mb-4 space-y-1">
+                        <p>• Benutzername</p>
+                        <p>• Art der Aktivität</p>
+                        <p>• Zeitstempel der Aktivität</p>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Die Speicherung der Audit-Logs erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Forenbetreiber hat ein berechtigtes Interesse an der Protokollierung dieser Aktivitäten zur Gewährleistung der Sicherheit des Forums, zur Missbrauchsprävention und zur Erfüllung eventueller rechtlicher Verpflichtungen.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Die Audit-Logs werden für einen angemessenen Zeitraum gespeichert und danach automatisch gelöscht, sofern keine rechtlichen Aufbewahrungspflichten bestehen.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Cookies</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Unser Forum verwendet Cookies. Das sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Ihr Browser greift auf diese Dateien zu. Durch den Einsatz von Cookies erhöht sich die Benutzerfreundlichkeit und Sicherheit des Forums.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Wir verwenden folgende Cookie-Arten:
+                    </p>
+                    <div class="bg-slate-800/50 rounded-lg p-4 text-gray-300 mb-4 space-y-3">
+                        <p><span class="font-semibold text-white">Session-Cookies:</span> Diese werden nach Ende Ihrer Browser-Sitzung automatisch gelöscht. Sie ermöglichen es, dass Sie angemeldet bleiben, während Sie das Forum nutzen.</p>
+                        <p><span class="font-semibold text-white">Persistente Cookies:</span> Diese werden automatisch nach einer vorgegebenen Dauer gelöscht. Sie ermöglichen es, dass Sie beim nächsten Besuch automatisch angemeldet bleiben (falls Sie diese Option gewählt haben).</p>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Die Speicherung von Cookies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Forenbetreiber hat ein berechtigtes Interesse an der Speicherung von Cookies zur technisch fehlerfreien und optimierten Bereitstellung seiner Dienste.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität des Forums eingeschränkt sein.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">5. Weitergabe von Daten</h2>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Eine Übermittlung Ihrer personenbezogenen Daten an Dritte findet nicht statt, außer:
+                    </p>
+                    <div class="bg-slate-800/50 rounded-lg p-4 text-gray-300 space-y-1">
+                        <p>• wenn Sie ausdrücklich eingewilligt haben (Art. 6 Abs. 1 lit. a DSGVO)</p>
+                        <p>• die Weitergabe nach Art. 6 Abs. 1 lit. f DSGVO zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich ist</p>
+                        <p>• eine gesetzliche Verpflichtung zur Weitergabe besteht (Art. 6 Abs. 1 lit. c DSGVO)</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">6. Ihre Rechte</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Sie haben folgende Rechte:
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Auskunftsrecht</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob betreffende Daten verarbeitet werden und auf Auskunft über diese Daten sowie auf weitere Informationen und Kopie der Daten entsprechend Art. 15 DSGVO.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Recht auf Berichtigung</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sie haben entsprechend Art. 16 DSGVO das Recht, die Vervollständigung der Sie betreffenden Daten oder die Berichtigung der Sie betreffenden unrichtigen Daten zu verlangen.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Recht auf Löschung</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sie haben das Recht, entsprechend Art. 17 DSGVO die Löschung Ihrer personenbezogenen Daten zu verlangen. Ihr Recht auf Löschung hängt u. a. davon ab, ob die Sie betreffenden Daten von uns zur Erfüllung unserer gesetzlichen Pflichten noch benötigt werden.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Recht auf Einschränkung der Verarbeitung</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sie haben entsprechend Art. 18 DSGVO das Recht, eine Einschränkung der Verarbeitung der Sie betreffenden Daten zu verlangen.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Recht auf Datenübertragbarkeit</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sie haben entsprechend Art. 20 DSGVO das Recht, die Sie betreffenden personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten oder die Übermittlung an einen anderen Verantwortlichen zu verlangen.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Widerspruchsrecht</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten, die aufgrund von Art. 6 Abs. 1 lit. f DSGVO erfolgt, Widerspruch einzulegen.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Widerrufsrecht</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sie haben das Recht, erteilte Einwilligungen mit Wirkung für die Zukunft zu widerrufen.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Beschwerderecht bei einer Aufsichtsbehörde</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Sie haben das Recht, sich bei einer Aufsichtsbehörde zu beschweren. In der Regel können Sie sich hierfür an die Aufsichtsbehörde Ihres üblichen Aufenthaltsortes oder Arbeitsplatzes oder unseres Firmensitzes wenden.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">7. Löschung Ihres Accounts</h2>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sie können die Löschung Ihres Accounts jederzeit verlangen. Bitte kontaktieren Sie uns dazu per E-Mail. Nach der Löschung Ihres Accounts werden Ihre personenbezogenen Daten gelöscht, soweit keine gesetzlichen Aufbewahrungspflichten bestehen.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Bitte beachten Sie, dass Ihre öffentlichen Beiträge möglicherweise auch nach Löschung Ihres Accounts sichtbar bleiben können, jedoch nicht mehr mit Ihrem Benutzernamen verknüpft sind.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">8. Änderung dieser Datenschutzerklärung</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">9. Kontakt</h2>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Bei Fragen zum Datenschutz können Sie sich jederzeit an uns wenden:
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        E-Mail: <a href="mailto:conner.berthun@mail.de" class="text-cyan-400 hover:text-cyan-300 transition-colors">conner.berthun@mail.de</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-800/50 bg-slate-900/30 backdrop-blur-xl py-8 px-6 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-400 text-sm">© 2025 Nexure Development. Alle Rechte vorbehalten.</p>
+            <div class="flex gap-6">
+                <a href="https://nexure-dev.de/impressum.html" class="text-gray-400 hover:text-cyan-400 text-sm transition-colors">Impressum</a>
+                <a href="https://forum.nexure-dev.de/datenschutz.html" class="text-gray-400 hover:text-cyan-400 text-sm transition-colors">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
