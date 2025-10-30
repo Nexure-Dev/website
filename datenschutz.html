@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz - Nexure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/Nexure-Dev/assets@main/Logos/nexure_logo.png" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'slate': {
+                            950: '#0f1419',
+                            900: '#1a1f2e',
+                            850: '#1e2433',
+                            800: '#252d3d',
+                            700: '#2d3548',
+                        },
+                        'cyan': {
+                            DEFAULT: '#06b6d4',
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-950 text-gray-100 font-sans antialiased">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <img src="https://cdn.jsdelivr.net/gh/Nexure-Dev/assets@main/Logos/nexure_logo.png" alt="Nexure Logo" class="w-9 h-9">
+                    <span class="text-xl font-bold text-white tracking-tight">Nexure</span>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="text-gray-400 hover:text-white text-sm transition-colors">Home</a>
+                    <a href="repos.html" class="text-gray-400 hover:text-white text-sm transition-colors">Repositories</a>
+                    <a href="https://forum.nexure-dev.de" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white text-sm transition-colors">Forum</a>
+                    <a href="https://dsc.gg/nexure" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm rounded-lg transition-all hover:shadow-lg hover:shadow-cyan-500/20">Discord Server</a>
+                </div>
+
+                <button class="md:hidden p-2 text-gray-400 hover:text-white" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800/50 bg-slate-900/95 backdrop-blur-xl">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-400 hover:text-white text-sm py-2 transition-colors">Home</a>
+                <a href="repos.html" class="block text-gray-400 hover:text-white text-sm py-2 transition-colors">Repositories</a>
+                <a href="https://forum.nexure-dev.de" target="_blank" rel="noopener noreferrer" class="block text-gray-400 hover:text-white text-sm py-2 transition-colors">Forum</a>
+                <a href="https://dsc.gg/nexure" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm rounded-lg transition-all text-center">Discord Server</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-28 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-12">
+                <div class="inline-block mb-4">
+                    <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-sm font-medium rounded-full border border-cyan-500/20">Rechtliches</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-4">Datenschutzerklärung</h1>
+                <p class="text-xl text-gray-400">Informationen zur Datenverarbeitung</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">1. Datenschutz auf einen Blick</h2>
+                    
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Allgemeine Hinweise</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Datenerfassung auf dieser Website</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        <span class="font-semibold text-white">Wer ist verantwortlich für die Datenerfassung auf dieser Website?</span><br>
+                        Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        <span class="font-semibold text-white">Wie erfassen wir Ihre Daten?</span><br>
+                        Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">2. Hosting</h2>
+                    
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Cloudflare Pages</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Diese Website wird auf Cloudflare Pages gehostet. Anbieter ist die Cloudflare Inc., 101 Townsend St., San Francisco, CA 94107, USA (nachfolgend „Cloudflare").
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern von Cloudflare gespeichert. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Der Einsatz von Cloudflare erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Cloudflare ist Empfänger Ihrer personenbezogenen Daten und als Auftragsverarbeiter für uns tätig. Dies entspricht unserem berechtigten Interesse im Sinne des Art. 6 Abs. 1 lit. f DSGVO, selbst keinen Server in unseren Räumlichkeiten vorhalten zu müssen.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Weitere Informationen finden Sie in der Datenschutzerklärung von Cloudflare unter: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300 transition-colors underline">https://www.cloudflare.com/privacypolicy/</a>
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">3. Allgemeine Hinweise und Pflichtinformationen</h2>
+                    
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Datenschutz</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Hinweis zur verantwortlichen Stelle</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
+                    </p>
+                    <div class="bg-slate-800/50 rounded-lg p-4 text-gray-300 mb-4">
+                        <p>Conner Berthun</p>
+                        <p>Botenfelstr. 2</p>
+                        <p>84088 Neufahrn</p>
+                        <p class="mt-2">E-Mail: conner.berthun@mail.de</p>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Speicherdauer</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z. B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">4. Datenerfassung auf dieser Website</h2>
+                    
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Server-Log-Dateien</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+                    </p>
+                    <div class="bg-slate-800/50 rounded-lg p-4 text-gray-300 mb-4 space-y-1">
+                        <p>• Browsertyp und Browserversion</p>
+                        <p>• verwendetes Betriebssystem</p>
+                        <p>• Referrer URL</p>
+                        <p>• Hostname des zugreifenden Rechners</p>
+                        <p>• Uhrzeit der Serveranfrage</p>
+                        <p>• IP-Adresse</p>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website – hierzu müssen die Server-Log-Files erfasst werden.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">5. Externe Links</h2>
+                    
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">GitHub</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Auf dieser Website sind Links zu GitHub eingebunden. Anbieter ist die GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Wenn Sie auf den GitHub-Link klicken, werden Sie auf die GitHub-Plattform weitergeleitet. Dabei wird Ihre IP-Adresse an GitHub übertragen.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Discord</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Auf dieser Website sind Links zu Discord eingebunden. Anbieter ist die Discord Inc., 444 De Haro Street, Suite 200, San Francisco, CA 94107, USA. Wenn Sie auf den Discord-Link klicken, werden Sie zur Discord-Plattform weitergeleitet. Dabei wird Ihre IP-Adresse an Discord übertragen.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">6. Ihre Rechte</h2>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.
+                    </p>
+                </div>
+
+                <div class="flex gap-4 pt-4">
+                    <a href="impressum.html" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium transition-colors">
+                        Impressum
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-800/50 bg-slate-900/30 backdrop-blur-xl py-8 px-6 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-400 text-sm">© 2025 Nexure Development. Alle Rechte vorbehalten.</p>
+            <div class="flex gap-6">
+                <a href="impressum.html" class="text-gray-400 hover:text-cyan-400 text-sm transition-colors">Impressum</a>
+                <a href="datenschutz.html" class="text-gray-400 hover:text-cyan-400 text-sm transition-colors">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

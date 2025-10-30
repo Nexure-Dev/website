@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum - Nexure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/Nexure-Dev/assets@main/Logos/nexure_logo.png" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'slate': {
+                            950: '#0f1419',
+                            900: '#1a1f2e',
+                            850: '#1e2433',
+                            800: '#252d3d',
+                            700: '#2d3548',
+                        },
+                        'cyan': {
+                            DEFAULT: '#06b6d4',
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-950 text-gray-100 font-sans antialiased">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <img src="https://cdn.jsdelivr.net/gh/Nexure-Dev/assets@main/Logos/nexure_logo.png" alt="Nexure Logo" class="w-9 h-9">
+                    <span class="text-xl font-bold text-white tracking-tight">Nexure</span>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="text-gray-400 hover:text-white text-sm transition-colors">Home</a>
+                    <a href="repos.html" class="text-gray-400 hover:text-white text-sm transition-colors">Repositories</a>
+                    <a href="https://forum.nexure-dev.de" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white text-sm transition-colors">Forum</a>
+                    <a href="https://dsc.gg/nexure" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm rounded-lg transition-all hover:shadow-lg hover:shadow-cyan-500/20">Discord Server</a>
+                </div>
+
+                <button class="md:hidden p-2 text-gray-400 hover:text-white" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800/50 bg-slate-900/95 backdrop-blur-xl">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-400 hover:text-white text-sm py-2 transition-colors">Home</a>
+                <a href="repos.html" class="block text-gray-400 hover:text-white text-sm py-2 transition-colors">Repositories</a>
+                <a href="https://forum.nexure-dev.de" target="_blank" rel="noopener noreferrer" class="block text-gray-400 hover:text-white text-sm py-2 transition-colors">Forum</a>
+                <a href="https://dsc.gg/nexure" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm rounded-lg transition-all text-center">Discord Server</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-28 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-12">
+                <div class="inline-block mb-4">
+                    <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-sm font-medium rounded-full border border-cyan-500/20">Rechtliches</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-4">Impressum</h1>
+                <p class="text-xl text-gray-400">Angaben gemäß § 5 DDG</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Angaben gemäß § 5 DDG</h2>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="font-semibold text-white">Conner Berthun</p>
+                        <p>Botenfelstr. 2</p>
+                        <p>84088 Neufahrn</p>
+                        <p>Deutschland, Bayern</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Kontakt</h2>
+                    <div class="space-y-2 text-gray-300">
+                        <p>E-Mail: <a href="mailto:conner.berthun@mail.de" class="text-cyan-400 hover:text-cyan-300 transition-colors">conner.berthun@mail.de</a></p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800/50 rounded-xl p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Haftungsausschluss</h2>
+                    
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Haftung für Inhalte</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Haftung für Links</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-6 mb-3">Urheberrecht</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+                    </p>
+                </div>
+
+                <div class="flex gap-4 pt-4">
+                    <a href="datenschutz.html" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium transition-colors">
+                        Datenschutzerklärung
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-800/50 bg-slate-900/30 backdrop-blur-xl py-8 px-6 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-400 text-sm">© 2025 Nexure Development. Alle Rechte vorbehalten.</p>
+            <div class="flex gap-6">
+                <a href="impressum.html" class="text-gray-400 hover:text-cyan-400 text-sm transition-colors">Impressum</a>
+                <a href="datenschutz.html" class="text-gray-400 hover:text-cyan-400 text-sm transition-colors">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
