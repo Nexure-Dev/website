@@ -11,50 +11,135 @@
             theme: {
                 extend: {
                     colors: {
-                        'dark': {
-                            900: '#0a0a0f',
-                            800: '#12121a',
-                            700: '#1a1a24',
+                        'slate': {
+                            950: '#0f1419',
+                            900: '#1a1f2e',
+                            850: '#1e2433',
+                            800: '#252d3d',
+                            700: '#2d3548',
                         },
                         'cyan': {
-                            DEFAULT: '#00CED1',
-                            400: '#00E5E8',
-                            600: '#00B8BB',
+                            DEFAULT: '#06b6d4',
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            600: '#0891b2',
                         }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-dark-900 text-gray-100">
-    <div id="navbar"></div>
-
-    <section class="py-20 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="max-w-4xl">
-<h1 class="text-5xl sm:text-6xl lg:text-8xl font-black leading-tight mb-6">
-  Programmieren <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 animate-pulse">zuerst!</span>
-</h1>
-
+<body class="bg-slate-950 text-gray-100 font-sans antialiased">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <img src="https://cdn.jsdelivr.net/gh/Nexure-Dev/assets@main/Logos/nexure_logo.png" alt="Nexure Logo" class="w-9 h-9">
+                    <span class="text-xl font-bold text-white tracking-tight">Nexure</span>
+                </div>
                 
-<p class="text-xl text-gray-400 mb-8 leading-relaxed">
-    Nexure entwickelt kostenlos FiveM Scripts und Discord Bots. Bei uns kannst du selbst programmieren lernen – wir helfen dir dabei!
-</p>
-                <div class="flex gap-4">
-                    <a href="repos.html" class="px-6 py-3 bg-cyan hover:bg-cyan-400 text-dark-900 font-semibold rounded-lg transition-colors">
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="text-cyan-400 font-medium text-sm transition-colors">Home</a>
+                    <a href="repos.html" class="text-gray-400 hover:text-white text-sm transition-colors">Repositories</a>
+                    <a href="https://forum.nexure-dev.de" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white text-sm transition-colors">Forum</a>
+                    <a href="https://dsc.gg/nexure" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm rounded-lg transition-all hover:shadow-lg hover:shadow-cyan-500/20">Discord Server</a>
+                </div>
+
+                <button class="md:hidden p-2 text-gray-400 hover:text-white" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800/50 bg-slate-900/95 backdrop-blur-xl">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html" class="block text-cyan-400 font-medium text-sm py-2">Home</a>
+                <a href="repos.html" class="block text-gray-400 hover:text-white text-sm py-2 transition-colors">Repositories</a>
+                <a href="https://forum.nexure-dev.de" target="_blank" rel="noopener noreferrer" class="block text-gray-400 hover:text-white text-sm py-2 transition-colors">Forum</a>
+                <a href="https://dsc.gg/nexure" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm rounded-lg transition-all text-center">Discord Server</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-6 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="max-w-4xl">
+                <div class="inline-block mb-6">
+                    <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-sm font-medium rounded-full border border-cyan-500/20">Open Source Development</span>
+                </div>
+                
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6 text-balance">
+                    Programmieren <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-cyan-500 to-blue-500">zuerst!</span>
+                </h1>
+                
+                <p class="text-xl sm:text-2xl text-gray-400 mb-10 leading-relaxed max-w-3xl text-pretty">
+                    Nexure entwickelt kostenlos FiveM Scripts und Discord Bots. Bei uns kannst du selbst programmieren lernen – wir helfen dir dabei!
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="repos.html" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-105">
                         Repositorys ansehen
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
                     </a>
-                    <a href="https://github.com/Nexure-Dev" target="_blank" class="px-6 py-3 bg-dark-800 hover:bg-dark-700 border border-gray-800 text-white font-semibold rounded-lg transition-colors">
+                    <a href="https://github.com/Nexure-Dev" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold rounded-lg transition-all">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
                         GitHub Profil
                     </a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mt-20 max-w-5xl">
+                <div class="group p-6 bg-slate-900/50 border border-slate-800/50 rounded-xl hover:border-cyan-500/30 transition-all hover:bg-slate-900/80">
+                    <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyan-500/20 transition-colors">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Open Source</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Alle Projekte sind kostenlos und frei verfügbar auf GitHub</p>
+                </div>
+
+                <div class="group p-6 bg-slate-900/50 border border-slate-800/50 rounded-xl hover:border-cyan-500/30 transition-all hover:bg-slate-900/80">
+                    <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyan-500/20 transition-colors">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Lernen</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Programmieren lernen mit unserer Unterstützung und Community</p>
+                </div>
+
+                <div class="group p-6 bg-slate-900/50 border border-slate-800/50 rounded-xl hover:border-cyan-500/30 transition-all hover:bg-slate-900/80">
+                    <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyan-500/20 transition-colors">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Community</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Aktive Community auf Discord und im Forum</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <script src="assets/js/navbar.js"></script>
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
-
-
