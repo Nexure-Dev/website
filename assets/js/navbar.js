@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="flex items-center gap-8">
                         <a href="index.html" class="${currentPage === 'index.html' ? 'text-cyan font-medium' : 'text-gray-400 hover:text-cyan transition-colors'}">Home</a>
-                        <a href="repos.html" class="${currentPage === 'repos.html' ? 'text-cyan font-medium' : 'text-gray-400 hover:text-cyan transition-colors'}">Repositorys</a>
-                        <a href="https://forum.nexure-dev.de">Forum</a>
-                        <a href="https://dsc.gg/nexure" class="px-5 py-2.5 bg-cyan hover:bg-cyan-400 text-dark-900 font-semibold rounded-lg transition-colors">Discord Server</a>
+                        <a href="repos.html" class="${currentPage === 'repos.html' ? 'text-cyan font-medium' : 'text-gray-400 hover:text-cyan transition-colors'}">Repositories</a>
+                        <a href="https://forum.nexure-dev.de" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-cyan transition-colors">Forum</a>
+                        <a href="https://dsc.gg/nexure" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-cyan hover:bg-cyan-400 text-dark-900 font-semibold rounded-lg transition-colors">Discord Server</a>
                     </div>
                 </div>
             </div>
@@ -22,5 +22,4 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     
     document.getElementById('navbar').innerHTML = navbarHTML;
-
 });
